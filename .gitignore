@@ -1,0 +1,8 @@
+/.env
+/base.db
+/Getcontact lSECURITYl.xlsx
+/venv
+/PyQt5-flask/py-to-exe-config.txt
+/PyQt5-flask/getcontact
+/PyQt5-flask/.venv
+/PyQt5-flask/__pycache__
