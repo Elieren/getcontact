@@ -2,7 +2,8 @@
 /base.db
 /Getcontact lSECURITYl.xlsx
 /venv
-/PyQt5-flask/py-to-exe-config.txt
-/PyQt5-flask/getcontact
-/PyQt5-flask/.venv
-/PyQt5-flask/__pycache__
+/PyQt5-flask_desktop_app/py-to-exe-config.txt
+/PyQt5-flask_desktop_app/getcontact
+/PyQt5-flask_desktop_app/.venv
+/PyQt5-flask_desktop_app/__pycache__
+/PyQt5-flask_desktop_app/.env
