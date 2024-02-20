@@ -8,7 +8,10 @@ For this program to work, you need a GetContact number database or other third-p
 
 Modify the .env.example file:
 ```
-TOKEN = # telegram token USER = # mysql user PASSWORD = # mysql password HOST = # mysql host example: 127.0.0.1
+TOKEN = # telegram token
+USER = # mysql user
+PASSWORD = # mysql password
+HOST = # mysql host example: 127.0.0.1
 ```
 
 Start the bot:
@@ -20,7 +23,9 @@ python main.py
 
 Modify the .env.example file:
 ```
-USER = # mysql user PASSWORD = # mysql password HOST = # mysql host example: 127.0.0.1
+USER = # mysql user
+PASSWORD = # mysql password
+HOST = # mysql host example: 127.0.0.1
 ```
 You need to set the server address in the server.py file (line 67):
 ```
