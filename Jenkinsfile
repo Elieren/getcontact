@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        // Создание уникального имени для нового образа
+        timestamp = new Date().getTime()
+    }
+
     stages {
         stage('Prepare Environment') {
             steps {
@@ -12,14 +17,6 @@ pipeline {
                     envVars.each {
                         env."${it.key}" = "${it.value}"
                     }
-                }
-            }
-        }
-        stage('Creating images tag') {
-            steps {
-                script {
-                    // Создание уникального имени для нового образа
-                    def timestamp = new Date().getTime()
                 }
             }
         }
@@ -35,7 +32,7 @@ pipeline {
             steps {
                 script {
                     // Создание уникального имени для нового образа
-                    env.NEW_IMAGE_NAME = "getcontact-flask:${timestamp}"
+                    env.NEW_IMAGE_NAME = "getcontact-flask:${env.timestamp}"
 
                     echo "# Собираем новый Docker образ"
                     dir('./PyQt5-flask_desktop_app') {
@@ -65,7 +62,7 @@ pipeline {
             steps {
                 script {
                     // Создание уникального имени для нового образа
-                    env.NEW_IMAGE_NAME = "getcontact-tg:${timestamp}"
+                    env.NEW_IMAGE_NAME = "getcontact-tg:${env.timestamp}"
 
                     echo "# Собираем новый Docker образ"
                     sh "docker build -t ${env.NEW_IMAGE_NAME} ."
