@@ -5,4 +5,4 @@ COPY . /getcontact
 
 RUN pip install -r requirements-docker-flask.txt
 
-CMD python3 main.py
+CMD python3 server.py
