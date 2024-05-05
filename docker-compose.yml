@@ -1,7 +1,7 @@
 version: '3'
 services:
   getcontact-tg:
-    image: getcontact-tg
+    image: getcontact-tg:${timestamp}
     restart: unless-stopped
     environment:
       - TOKEN=${TOKEN}
@@ -10,7 +10,7 @@ services:
       - HOST=${HOST}
 
   getcontact-flask:
-    image: getcontact-flask
+    image: getcontact-flask:${timestamp}
     restart: unless-stopped
     network_mode: host
     environment:
