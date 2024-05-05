@@ -1,6 +1,7 @@
 version: '3'
 services:
   getcontact-tg:
+    container_name: getcontact-tg
     image: getcontact-tg:${timestamp}
     restart: unless-stopped
     network_mode: host
@@ -11,6 +12,7 @@ services:
       - HOST=${HOST}
 
   getcontact-flask:
+    container_name: getcontact-flask
     image: getcontact-flask:${timestamp}
     restart: unless-stopped
     network_mode: host
