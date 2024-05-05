@@ -3,6 +3,7 @@ services:
   getcontact-tg:
     image: getcontact-tg:${timestamp}
     restart: unless-stopped
+    network_mode: host
     environment:
       - TOKEN=${TOKEN}
       - USER=${USER}
