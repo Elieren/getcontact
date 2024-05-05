@@ -28,6 +28,14 @@ pipeline {
                 }
             }
         }
+        stage('Get Old Image Tag (getcontact-tg)') {
+            steps {
+                script {
+                    // Получаем тег старого образа pinteresthub
+                    env.OLD_IMAGE_TAG_TG = sh(script: "docker images getcontact-tg --format '{{.Tag}}' | head -n 1", returnStdout: true).trim()
+                }
+            }
+        }
         stage('Build New Image (getcontact-flask)') {
             steps {
                 script {
@@ -38,14 +46,6 @@ pipeline {
                     dir('./PyQt5-flask_desktop_app') {
                         sh "docker build -t ${env.NEW_IMAGE_NAME_FLASK} ."
                     }
-                }
-            }
-        }
-        stage('Get Old Image Tag (getcontact-tg)') {
-            steps {
-                script {
-                    // Получаем тег старого образа pinteresthub
-                    env.OLD_IMAGE_TAG_TG = sh(script: "docker images getcontact-tg --format '{{.Tag}}' | head -n 1", returnStdout: true).trim()
                 }
             }
         }
