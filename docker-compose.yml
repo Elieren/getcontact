@@ -1,0 +1,19 @@
+version: '3'
+services:
+  getcontact-tg:
+    image: getcontact-tg
+    restart: unless-stopped
+    environment:
+      - TOKEN=${TOKEN}
+      - USER=${USER}
+      - PASSWORD=${PASSWORD}
+      - HOST=${HOST}
+
+  getcontact-flask:
+    image: getcontact-flask
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - USER=${USER}
+      - PASSWORD=${PASSWORD}
+      - HOST=${HOST}
